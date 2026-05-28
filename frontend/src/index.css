@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Global Theme Adjustments */
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 antialiased;
+  }
+
+  /* Custom scrollbar matching the dark analytics interface profile */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors;
+  }
+
+  /* Text selection highlight style tuning */
+  ::-moz-selection {
+    @apply bg-emerald-500/30 text-emerald-200;
+  }
+  ::selection {
+    @apply bg-emerald-500/30 text-emerald-200;
+  }
+}
