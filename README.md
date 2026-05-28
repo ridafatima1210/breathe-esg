@@ -42,36 +42,120 @@ Records enter the ledger state as `PENDING`. Analysts can explicitly execute rea
 ```bash
 # Move into the backend folder
 cd backend
-
+```
+```bash
 # Initialize your Python virtual isolated environment sandbox
 python3 -m venv venv
 source venv/bin/activate
-
+```
+```bash
 # Upgrade local package handlers and download structural dependencies 
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
-
+```
+```bash
 # Run initial database configuration scripts
 python manage.py makemigrations ingestion
 python manage.py migrate
-
+```
+```bash
 # Seed the default demonstration organization data tenant record
 python manage.py shell -c "from ingestion.models import Organization; Organization.objects.get_or_create(id=1, name='Enterprise Client Demo')"
-
+```
+```bash
 # Launch the backend server local instance
 python manage.py runserver
-The backend instance will initialize live at: http://127.0.0.1:8000/
+```
+# The backend instance will initialize live at: http://127.0.0.1:8000/
 
 ### 2. Spin Up the React Frontend Workspace
+# Open a secondary terminal tab or terminal window:
 ```bash
-# Move into the backend folder
-cd backend
+# Move into the frontend directory workspace
+cd frontend
+```
+```bash
+# Install UI framework elements and Tailwind engines
+npm install
+```
+```bash
+# Run the local Vite dev server
+npm run dev
+```
+# The frontend user interface will initialize live at: http://localhost:5173/
 
-# Initialize your Python virtual isolated environment sandbox
-python3 -m venv venv
-source venv/bin/activate
+---
 
-# Upgrade local package handlers and download structural dependencies 
-python3 -m pip install --upgrade pip
-pip install -r requirements.txt
+# 🌍 Production Cloud Deployment Configuration
 
+## Backend Deployment
+The backend service is deployed on **Render** using an explicit web service configuration powered through the **Gunicorn WSGI runtime interface** for scalable production execution.
+
+## Frontend Deployment
+The frontend application is deployed on **Vercel**, with the root optimization target configured directly toward the static production build generated inside the `/frontend` sub-directory.
+
+---
+
+# 📦 Core Documentation Manifest
+
+The repository root workspace contains detailed technical and architectural reference documents explaining system design decisions, trade-offs, and implementation methodology.
+
+## Documentation Files
+
+### `MODEL.md`
+Contains:
+- Architectural blueprints
+- Database schema field diagrams
+- Carbon emission coefficient calculation formulas
+- ESG computation model definitions
+
+### `DECISIONS.md`
+Contains:
+- Foundational engineering decisions
+- Framework and library selection reasoning
+- Environment configuration choices
+- Deployment architecture considerations
+
+### `TRADEOFFS.md`
+Contains:
+- Speed vs scalability evaluations
+- Data assumption explanations
+- Dependency boundary discussions
+- Performance optimization considerations
+
+### `SOURCES.md`
+Contains:
+- Regulatory documentation references
+- GHG Protocol citations
+- EPA emission factor guidance references
+- Sustainability data source acknowledgements
+
+---
+
+# 🚀 Deployment Stack
+
+| Layer      | Technology |
+|------------|------------|
+| Frontend   | Vercel |
+| Backend    | Render |
+| Runtime    | Gunicorn |
+| Framework  | Django |
+| API Layer  | Django REST Framework |
+
+---
+
+# 📁 Repository Structure
+
+```bash
+project-root/
+│
+├── backend/
+├── frontend/
+│
+├── MODEL.md
+├── DECISIONS.md
+├── TRADEOFFS.md
+├── SOURCES.md
+│
+└── README.md
+```
