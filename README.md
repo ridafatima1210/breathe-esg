@@ -66,7 +66,7 @@ python manage.py shell -c "from ingestion.models import Organization; Organizati
 # Launch the backend server local instance
 python manage.py runserver
 ```
-# The backend instance will initialize live at: http://127.0.0.1:8000/
+The backend instance will initialize live at: http://127.0.0.1:8000/
 
 ### 2. Spin Up the React Frontend Workspace
 # Open a secondary terminal tab or terminal window:
@@ -82,7 +82,7 @@ npm install
 # Run the local Vite dev server
 npm run dev
 ```
-# The frontend user interface will initialize live at: http://localhost:5173/
+The frontend user interface will initialize live at: http://localhost:5173/
 
 ---
 
